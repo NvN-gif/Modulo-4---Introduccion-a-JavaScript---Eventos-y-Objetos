@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Obtener elementos de etiqueta P</title>
+    <script language="JavaScript">
+        function mostrarElementosP() {
+            var elementosP = document.getElementsByTagName("p");
+            var listaElementos = "";
+            for (var i = 0; i < elementosP.length; i++) {
+                listaElementos += elementosP[i].innerText + "\n";
+            }
+            alert(listaElementos);
+        }
+
+        function añadirNuevoParrafo() {
+            var nuevoParrafo = document.createElement("p");
+            var textoNuevoParrafo = document.createTextNode("Texto del nuevo párrafo");
+            nuevoParrafo.appendChild(textoNuevoParrafo);
+            document.body.appendChild(nuevoParrafo);
+        }
+    </script>
+</head>
+<body onload="mostrarElementosP(); añadirNuevoParrafo();">
+    <p>Primer párrafo</p>
+    <p>Segundo párrafo</p>
+    <p>Tercer párrafo</p>
+</body>
+</html>
